@@ -73,7 +73,7 @@ export default function AuthPage({ mode }: { mode: Mode }) {
         </button>
       </form>
       <p className="small muted" style={{ marginTop: 16 }}>
-        {mode === "login" && <>New here? <Link to="/signup">Create an account</Link> · <Link to="/reset">Forgot password?</Link></>}
+        {mode === "login" && <>No account? Ask the site owner for your login. · <Link to="/reset">Forgot password?</Link></>}
         {mode === "signup" && <>Already have an account? <Link to="/login">Log in</Link></>}
         {mode === "reset" && <><Link to="/login">Back to log in</Link></>}
       </p>

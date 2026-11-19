@@ -14,8 +14,7 @@ export default function Landing() {
             and full mock exams in the exact four-part format, scored against the 60% pass line.
           </p>
           <div className="row">
-            <Link to="/signup" className="btn red">Create a free account</Link>
-            <Link to="/login" className="btn ghost">Log in</Link>
+            <Link to="/login" className="btn red">Log in</Link>
           </div>
         </div>
         <div className="examtable" aria-label="The A2 exam at a glance">

@@ -35,7 +35,6 @@ function Header() {
           ) : (
             <>
               <NavLink to="/login">Log in</NavLink>
-              <NavLink to="/signup">Create account</NavLink>
             </>
           )}
         </nav>
@@ -68,7 +67,7 @@ function App() {
         <Routes>
           <Route path="/" element={loading ? null : user ? <Navigate to="/app" replace /> : <Landing />} />
           <Route path="/login" element={<AuthPage mode="login" />} />
-          <Route path="/signup" element={<AuthPage mode="signup" />} />
+          <Route path="/signup" element={<Navigate to="/login" replace />} />
           <Route path="/reset" element={<AuthPage mode="reset" />} />
           <Route path="/app" element={<Private><Dashboard /></Private>} />
           <Route path="/learn" element={<Private><Course /></Private>} />
