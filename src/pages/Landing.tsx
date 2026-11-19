@@ -10,7 +10,7 @@ export default function Landing() {
           <div className="eyebrow">Valsts valodas prasmes pārbaude · A2</div>
           <h1>From your first <em>Labdien</em> to a pass in the A2 exam.</h1>
           <p className="lede">
-            A course built backwards from the real test: 18 short units, native-voice audio for every word,
+            A course built backwards from the real test: {units.length} short units from A1 to A2, native-voice audio for every word,
             and full mock exams in the exact four-part format, scored against the 60% pass line.
           </p>
           <div className="row">

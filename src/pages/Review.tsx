@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
-import { allWords, units, type WordRef } from "../data";
+import { allWords, units, type WordRef, unitNo } from "../data";
 import { BOX_DAYS, useProgress, type VocabRow } from "../lib/progress";
 import { say } from "../lib/audio";
 import { shuffle } from "../lib/text";
@@ -89,7 +89,7 @@ export default function Review() {
         <label className="f"><span>What to review</span>
           <select className="in" value={scope} onChange={(e) => setScope(e.target.value)}>
             <option value="due">Due words from finished units ({dueWords.length})</option>
-            {units.map((u) => <option key={u.id} value={u.id}>Unit {Number(u.id.slice(1))}: {u.title} ({u.vocab.length})</option>)}
+            {units.map((u) => <option key={u.id} value={u.id}>Unit {unitNo(u)}: {u.title} ({u.vocab.length})</option>)}
           </select>
         </label>
         <label className="f"><span>Direction</span>

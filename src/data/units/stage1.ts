@@ -1,11 +1,11 @@
-import type { Unit } from "../types";
+﻿import type { Unit } from "../types";
 
 export const stage1: Unit[] = [
   /* ------------------------------------------------------------------ */
   {
     id: "u01",
     stage: 1,
-    title: "Sounds and greetings",
+    title: "Greetings and first phrases",
     lvTitle: "Sveiki!",
     goal: "Read any Latvian word out loud, greet people and survive the first minute of a conversation.",
     exam: "Speaking (task 1 starts with greetings) · Listening",
@@ -227,7 +227,7 @@ export const stage1: Unit[] = [
   {
     id: "u03",
     stage: 1,
-    title: "Numbers, age and prices",
+    title: "Bigger numbers, age and prices",
     lvTitle: "Skaitļi",
     goal: "Understand numbers when you hear them — phone numbers, prices, ages. The listening exam is full of them.",
     exam: "Listening tasks 1 and 3 · Speaking task 3",

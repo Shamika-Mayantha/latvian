@@ -1,18 +1,23 @@
 import { stage1 } from "./units/stage1";
 import { stage2 } from "./units/stage2";
 import { stage3 } from "./units/stage3";
+import { a01, a02, a03, a04 } from "./units/starter";
 import { mock1 } from "./exams/mock1";
 import { mock2 } from "./exams/mock2";
 import { mock3 } from "./exams/mock3";
 import type { Unit, Word } from "./types";
 
-export const units: Unit[] = [...stage1, ...stage2, ...stage3];
+const [u01, u02, u03, u04, u05, u06] = stage1;
+// A1 path: gentle starter units are interleaved with the original stage 1
+export const units: Unit[] = [a01, u01, u02, a02, a03, u03, u04, u05, a04, u06, ...stage2, ...stage3];
+/** 1-based position of a unit in the course */
+export const unitNo = (u: { id: string }) => units.findIndex((x) => x.id === u.id) + 1;
 export const exams = [mock1, mock2, mock3];
 
 export const stages = [
-  { n: 1, title: "Foundations", sub: "From zero to A1: sounds, yourself, numbers, family, time, daily verbs." },
-  { n: 2, title: "Everyday life", sub: "A1 → A2: the cases you need for food, shops, home, city, work and the past." },
-  { n: 3, title: "Exam-ready A2", sub: "Future, health, free time, holidays, asking questions and describing pictures." },
+  { n: 1, title: "A1 · Starting from zero", sub: "Sounds, greetings, yourself, things around you, numbers, family, time and your first verbs." },
+  { n: 2, title: "A2 · Everyday life", sub: "The cases you need for food, shops, home, city, work, and the past tense." },
+  { n: 3, title: "A2 · Exam-ready", sub: "Future, health, free time, holidays, asking questions and describing pictures." },
 ] as const;
 
 export interface WordRef extends Word { id: string; unitId: string }

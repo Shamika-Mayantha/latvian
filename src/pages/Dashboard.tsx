@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { allWords, PARTS, PASS, units } from "../data";
+import { allWords, PARTS, PASS, units, unitNo } from "../data";
 import { readiness, useProgress } from "../lib/progress";
 import { useAuth } from "../lib/auth";
 import { Meter } from "../components/ui";
@@ -44,7 +44,7 @@ export default function Dashboard() {
           <div className="eyebrow">Next step</div>
           {next ? (
             <>
-              <h2 style={{ marginBottom: 4 }}>Unit {Number(next.id.slice(1))}: {next.title}</h2>
+              <h2 style={{ marginBottom: 4 }}>Unit {unitNo(next)}: {next.title}</h2>
               <div className="lv ink2" style={{ fontSize: 19, marginBottom: 10 }}>{next.lvTitle}</div>
               <p className="ink2">{next.goal}</p>
               <p className="small muted">Helps with: {next.exam}</p>

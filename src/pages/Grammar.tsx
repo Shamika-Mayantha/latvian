@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { units } from "../data";
+import { units, unitNo } from "../data";
 import { Rich } from "../components/ui";
 
 const CASES = {
@@ -64,11 +64,11 @@ export default function Grammar() {
       <hr />
       <h2>Unit by unit</h2>
       <nav className="small" style={{ columns: 2, marginBottom: 24 }}>
-        {units.map((u) => <div key={u.id}><a href={`#g-${u.id}`}>{Number(u.id.slice(1))}. {u.title}</a></div>)}
+        {units.map((u) => <div key={u.id}><a href={`#g-${u.id}`}>{unitNo(u)}. {u.title}</a></div>)}
       </nav>
       {units.map((u) => (
         <section key={u.id} id={`g-${u.id}`} style={{ marginBottom: 40, scrollMarginTop: 80 }}>
-          <div className="spread"><h3 style={{ marginBottom: 2 }}>{Number(u.id.slice(1))}. {u.title}</h3><Link to={`/learn/${u.id}`} className="small">Open unit</Link></div>
+          <div className="spread"><h3 style={{ marginBottom: 2 }}>{unitNo(u)}. {u.title}</h3><Link to={`/learn/${u.id}`} className="small">Open unit</Link></div>
           {u.grammar.map((g, i) => (
             <div key={i} style={{ marginTop: 12 }}>
               <h4>{g.title}</h4>

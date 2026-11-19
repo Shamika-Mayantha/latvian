@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { units, unitById } from "../data";
+import { units, unitById, unitNo } from "../data";
 import { useProgress } from "../lib/progress";
 import { AudioButton, Rich } from "../components/ui";
 import { ExerciseView } from "../components/Exercise";
@@ -43,7 +43,7 @@ export default function Lesson() {
   return (
     <div className="narrow">
       <Link to="/learn" className="small">← Course</Link>
-      <div className="eyebrow" style={{ marginTop: 16 }}>Unit {Number(unit.id.slice(1))} of {units.length} · Stage {unit.stage}</div>
+      <div className="eyebrow" style={{ marginTop: 16 }}>Unit {unitNo(unit)} of {units.length} · {unit.stage === 1 ? "Level A1" : "Level A2"}</div>
       <h1 style={{ marginBottom: 4 }}>{unit.title}</h1>
       <div className="lv ink2" style={{ fontSize: 22 }}>{unit.lvTitle}</div>
       <p className="ink2" style={{ marginTop: 12 }}>{unit.goal}</p>

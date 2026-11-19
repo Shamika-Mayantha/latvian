@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { stages, units } from "../data";
+import { stages, units, unitNo } from "../data";
 import { useProgress } from "../lib/progress";
 
 export default function Course() {
@@ -8,7 +8,7 @@ export default function Course() {
     <div className="wrap">
       <div className="eyebrow">Kurss</div>
       <h1>The course</h1>
-      <p className="lede">Eighteen units in order. Each one takes about an hour, spread over two or three days. Finish the practice to mark it done — you can redo it any time.</p>
+      <p className="lede">{units.length} units in order, starting from zero at A1. Each one takes about an hour, spread over two or three days. Finish the practice to mark it done — you can redo it any time.</p>
       {stages.map((s) => (
         <section key={s.n}>
           <div className="stage">
@@ -21,7 +21,7 @@ export default function Course() {
               return (
                 <li key={u.id}>
                   <Link to={`/learn/${u.id}`}>
-                    <span className="no">{u.id.slice(1)}</span>
+                    <span className="no">{String(unitNo(u)).padStart(2, "0")}</span>
                     <span>
                       <span className="tt">{u.title}</span> <span className="lv muted"> · {u.lvTitle}</span>
                       <div className="sub">{u.exam}</div>
